@@ -1,0 +1,174 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.header-logo:hover {
+  background-color: var(--gray-light);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Navegación */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--btn-radius);
+  color: var(--text-main);
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--gray-light);
+}
+
+.nav-link.active {
+  background-color: var(--text-main);
+  color: #ffffff;
+}
+
+/* Barra de búsqueda */
+.header-search {
+  flex: 1;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-light);
+  border-radius: var(--btn-radius);
+  padding: 0 16px;
+  height: 48px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-form:focus-within {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.2);
+  border: 1px solid #7eb0db;
+}
+
+.search-icon-btn {
+  font-size: 16px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  font-size: 16px;
+  color: var(--text-main);
+  height: 100%;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-submit-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: var(--btn-radius);
+  transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Iconos y Perfil de usuario */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: var(--gray-light);
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   RESPONSIVE HEADER
+   ============================================================ */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .header-nav {
+    display: none; /* Ocultamos los links en móvil para dar espacio a la búsqueda */
+  }
+
+  .header-actions .action-btn {
+    display: none; /* Ocultamos botones secundarios en pantallas pequeñas */
+  }
+
+  .search-submit-btn {
+    display: none; /* En móvil se busca directamente pulsando enter */
+  }
+}

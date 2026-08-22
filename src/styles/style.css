@@ -1,0 +1,114 @@
+/* ============================================================
+   VARIABLES GLOBALES Y TEMA
+   ============================================================ */
+:root {
+  /* Paleta de colores oficial estilo Pinterest */
+  --primary-color: #e60023;
+  --primary-hover: #b6001c;
+  --bg-color: #ffffff;
+  --text-main: #111111;
+  --text-secondary: #5f5f5f;
+  --text-muted: #767676;
+  --gray-light: #efefef;
+  --gray-hover: #e2e2e2;
+  --border-color: #e0e0e0;
+  --card-radius: 16px;
+  --btn-radius: 24px;
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Fuentes */
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================================
+   RESET BÁSICO
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   CONTENEDOR PRINCIPAL
+   ============================================================ */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+/* Píldoras de sugerencias / filtros rápidos */
+.quick-topics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 8px 0;
+}
+
+.topic-chip {
+  background-color: var(--gray-light);
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: var(--btn-radius);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.topic-chip:hover {
+  background-color: var(--gray-hover);
+}
+
+.topic-chip:active {
+  transform: scale(0.96);
+}
+
+.topic-chip.active {
+  background-color: var(--text-main);
+  color: #ffffff;
+}
