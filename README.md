@@ -96,8 +96,6 @@ Araceli Fradejas Muñoz
 ### Redes sociales y enlaces
 
 - GitHub: https://github.com/AraceliFradejas
-- GitHub - Proyecto Landing Page: https://github.com/AraceliFradejas/Proyecto-LANDING-PAGE
-- GitHub - Proyecto Landing Page 1: https://github.com/AraceliFradejas/Proyecto-LANDING-PAGE-1
 - LinkedIn: https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/
 - Instagram: https://www.instagram.com/goldilocks1013x/
 - X (Twitter): https://x.com/AraceliFradejas
@@ -207,8 +205,6 @@ Araceli Fradejas Muñoz
 ### Social links and profiles
 
 - GitHub: https://github.com/AraceliFradejas
-- GitHub - Landing Page Project: https://github.com/AraceliFradejas/Proyecto-LANDING-PAGE
-- GitHub - Landing Page Project 1: https://github.com/AraceliFradejas/Proyecto-LANDING-PAGE-1
 - LinkedIn: https://www.linkedin.com/in/araceli-fradejas-munoz-transformaciondigital/
 - Instagram: https://www.instagram.com/goldilocks1013x/
 - X (Twitter): https://x.com/AraceliFradejas
