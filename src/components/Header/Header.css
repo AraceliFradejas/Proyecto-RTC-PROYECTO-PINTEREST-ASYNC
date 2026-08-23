@@ -14,10 +14,10 @@
 .header-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
+  padding: 6px 10px;
+  border-radius: var(--btn-radius);
   transition: background-color 0.2s ease;
   user-select: none;
 }
@@ -27,8 +27,17 @@
 }
 
 .logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: block;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
 }
 
 /* Navegación */
@@ -160,15 +169,19 @@
     gap: 10px;
   }
 
+  .logo-title {
+    display: none; /* En móvil solo mostramos el icono AFM */
+  }
+
   .header-nav {
-    display: none; /* Ocultamos los links en móvil para dar espacio a la búsqueda */
+    display: none;
   }
 
   .header-actions .action-btn {
-    display: none; /* Ocultamos botones secundarios en pantallas pequeñas */
+    display: none;
   }
 
   .search-submit-btn {
-    display: none; /* En móvil se busca directamente pulsando enter */
+    display: none;
   }
 }

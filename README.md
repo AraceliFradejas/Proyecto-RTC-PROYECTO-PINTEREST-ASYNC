@@ -1,4 +1,4 @@
-# 📌 Réplica de Pinterest - Async Web Design
+# 📌 AFM Inspiration - Réplica de Pinterest (Async Web Design)
 
 > Proyecto realizado como entrega del **PROYECTO: PINTEREST ASYNC** del módulo 4 *"Web Design Advanced"* del máster **Rock{TheCode}** de ThePower / Hackio.
 
@@ -12,7 +12,7 @@
 
 ## 📖 Descripción
 
-Réplica interactiva y funcional de la interfaz de **Pinterest**. La aplicación permite explorar y buscar imágenes en tiempo real consumiendo la **API de Unsplash**. Cuenta con una arquitectura modular basada en componentes de Vanilla JavaScript (ES6+), diseño *Masonry* completamente responsivo con CSS, manejo de estados asíncronos (carga y sin resultados), y limpieza automática de búsquedas.
+Réplica interactiva y funcional de la interfaz de **Pinterest** con identidad de marca personalizada **AFM Inspiration**. La aplicación permite explorar y buscar imágenes en tiempo real consumiendo la **API de Unsplash**. Cuenta con una arquitectura modular basada en componentes de Vanilla JavaScript (ES6+), diseño *Masonry* completamente responsivo con CSS, manejo de estados asíncronos (carga y sin resultados), y limpieza automática de búsquedas.
 
 > **Nota:** Este proyecto es un ejercicio académico. Todas las imágenes, datos de usuarios y enlaces son obtenidos de forma dinámica a través de la API oficial de Unsplash.
 
@@ -29,11 +29,11 @@ Proyecto-RTC-PROYECTO-PINTEREST-ASYNC/
 ├── .gitignore              # Archivos y carpetas ignorados por Git
 ├── README.md               # Documentación del proyecto
 ├── public/
-│   └── favicon.svg         # Favicon vectorial estilo Pinterest
+│   └── favicon.svg         # Logotipo vectorial con identidad AFM
 └── src/
     ├── components/
     │   ├── Header/
-    │   │   ├── Header.js   # Barra de navegación, logo interactivo y buscador
+    │   │   ├── Header.js   # Barra de navegación, logo interactivo AFM y buscador
     │   │   └── Header.css  # Estilos responsivos del header
     │   ├── Card/
     │   │   ├── Card.js     # Tarjeta individual: foto, autor, avatar, likes y overlay
@@ -42,7 +42,7 @@ Proyecto-RTC-PROYECTO-PINTEREST-ASYNC/
     │   │   ├── Gallery.js  # Cuadrícula Masonry, Loader y estado vacío
     │   │   └── Gallery.css # Grid responsive (column-count) y animaciones
     │   └── Footer/
-    │       ├── Footer.js   # Pie de página semántico
+    │       ├── Footer.js   # Pie de página semántico con redes y disclaimer
     │       └── Footer.css  # Estilos del footer
     ├── services/
     │   └── unsplash.js     # Peticiones asíncronas (fetch / async-await) a la API de Unsplash
@@ -57,12 +57,12 @@ Proyecto-RTC-PROYECTO-PINTEREST-ASYNC/
 
 | Componente / Elemento | Descripción |
 | :--- | :--- |
-| **Header** | Barra fija con logo interactivo (retorno al estado inicial), enlaces de navegación y formulario de búsqueda con icono. |
+| **Header** | Barra fija con logo interactivo AFM (retorno al estado inicial), enlaces de navegación y formulario de búsqueda con icono. |
 | **Quick Topics (Píldoras)** | Botones de filtro rápido para buscar temáticas populares con un solo click. |
 | **Photo Card** | Tarjeta de foto con imagen optimizada, overlay hover (botón "Guardar" y enlace a Unsplash), avatar del fotógrafo, nombre, `@usuario` y likes. |
 | **Gallery (Masonry)** | Disposición en columnas fluidas tipo Pinterest adaptable según la resolución de pantalla. |
 | **Loader & Empty State** | Animación de carga durante peticiones y vista amigable con sugerencias si no hay resultados. |
-| **Footer** | Pie de página con créditos y enlaces informativos. |
+| **Footer** | Pie de página con enlaces a redes sociales, copyright y nota de descargo académica bilingüe. |
 
 ---
 
@@ -124,12 +124,13 @@ npm run build
 - [X (Twitter)](https://x.com/AraceliFradejas)
 - [TikTok](https://www.tiktok.com/@arucci1)
 - [YouTube](https://www.youtube.com/@aracelifradejasmunoz2758)
+- [Medium](https://medium.com/@araceli.fradejas)
 
 <br>
 <hr>
 <br>
 
-# 📌 Pinterest Clone - Async Web Design (English Version)
+# 📌 AFM Inspiration - Pinterest Clone (Async Web Design - English Version)
 
 > Project developed as the submission for the **PINTEREST ASYNC PROJECT** of Module 4 *"Web Design Advanced"* in the **Rock{TheCode}** Master by ThePower / Hackio.
 
@@ -143,7 +144,7 @@ npm run build
 
 ## 📖 Description
 
-An interactive and functional replica of the **Pinterest** interface. The application allows users to explore and search for images in real-time by consuming the **Unsplash API**. It features a modular architecture built with Vanilla JavaScript components (ES6+), a fully responsive *Masonry* CSS layout, asynchronous state management (loading and empty states), and automatic input clearing upon search.
+An interactive and functional replica of the **Pinterest** interface with custom **AFM Inspiration** branding. The application allows users to explore and search for images in real-time by consuming the **Unsplash API**. It features a modular architecture built with Vanilla JavaScript components (ES6+), a fully responsive *Masonry* CSS layout, asynchronous state management (loading and empty states), and automatic input clearing upon search.
 
 > **Note:** This project is an academic exercise. All images, author profiles, and links are dynamically retrieved using the official Unsplash API.
 
@@ -160,11 +161,11 @@ Proyecto-RTC-PROYECTO-PINTEREST-ASYNC/
 ├── .gitignore              # Files and folders ignored by Git
 ├── README.md               # Project documentation
 ├── public/
-│   └── favicon.svg         # Pinterest-style vector favicon
+│   └── favicon.svg         # AFM custom vector favicon
 └── src/
     ├── components/
     │   ├── Header/
-    │   │   ├── Header.js   # Sticky navigation bar, logo, and search input
+    │   │   ├── Header.js   # Sticky navigation bar, AFM interactive logo, and search input
     │   │   └── Header.css  # Responsive header styling
     │   ├── Card/
     │   │   ├── Card.js     # Single card: photo, author, avatar, likes & overlay
@@ -173,7 +174,7 @@ Proyecto-RTC-PROYECTO-PINTEREST-ASYNC/
     │   │   ├── Gallery.js  # Masonry grid, Loader and empty state
     │   │   └── Gallery.css # Responsive grid (column-count) and animations
     │   └── Footer/
-    │       ├── Footer.js   # Semantic footer component
+    │       ├── Footer.js   # Semantic footer component with social links & disclaimer
     │       └── Footer.css  # Footer styling
     ├── services/
     │   └── unsplash.js     # Async API requests (fetch / async-await) to Unsplash
@@ -188,12 +189,12 @@ Proyecto-RTC-PROYECTO-PINTEREST-ASYNC/
 
 | Component / Feature | Description |
 | :--- | :--- |
-| **Header** | Sticky navbar with interactive logo (reset to initial feed), navigation links, and search input with icon. |
+| **Header** | Sticky navbar with AFM interactive logo (reset to initial feed), navigation links, and search input with icon. |
 | **Quick Topics (Pills)** | Quick-filter chip buttons to explore popular topics in one click. |
 | **Photo Card** | Card displaying optimized photo, hover overlay ("Save" button & Unsplash link), photographer avatar, name, `@username`, and likes count. |
 | **Gallery (Masonry)** | Pinterest-style fluid multi-column layout adapting across screen sizes. |
 | **Loader & Empty State** | Animated loading spinner during fetch requests and friendly empty state with suggestions when no results match. |
-| **Footer** | Semantic footer with project credits and informative links. |
+| **Footer** | Semantic footer with social media links, copyright, and bilingual academic disclaimer. |
 
 ---
 
@@ -255,3 +256,4 @@ npm run build
 - [X (Twitter)](https://x.com/AraceliFradejas)
 - [TikTok](https://www.tiktok.com/@arucci1)
 - [YouTube](https://www.youtube.com/@aracelifradejasmunoz2758)
+- [Medium](https://medium.com/@araceli.fradejas)

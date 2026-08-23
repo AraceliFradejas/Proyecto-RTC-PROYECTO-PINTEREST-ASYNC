@@ -1,40 +1,115 @@
 .footer {
   margin-top: auto;
-  background-color: #ffffff;
-  border-top: 1px solid var(--border-color);
-  padding: 24px 20px;
-  text-align: center;
+  background-color: #111111;
+  color: #ffffff;
+  padding: 40px 24px 30px;
 }
 
-.footer-content {
+.footer-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #cccccc;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #222222;
+  color: #ffffff;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary-color, #e60023);
+  transform: translateY(-3px);
+  color: #ffffff;
+}
+
+.social-svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #999999;
+  font-weight: 500;
+}
+
+/* Sección de Descargo de responsabilidad / Nota de entrega académica */
+.footer-disclaimer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
-.footer-text {
-  font-size: 14px;
-  color: var(--text-secondary);
+.disclaimer-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #888888;
+  text-align: justify;
 }
 
-.footer-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+.disclaimer-text strong {
+  color: #e0e0e0;
 }
 
-.footer-link {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
+.disclaimer-en {
+  color: #777777;
 }
 
-.footer-link:hover {
-  color: var(--text-main);
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 16px 20px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .disclaimer-text {
+    font-size: 11px;
+  }
 }
