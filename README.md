@@ -6,7 +6,7 @@
 
 ## 🌐 Demo
 
-[Ver la aplicación en vivo en Vercel](https://proyecto-rtc-proyecto-pinterest-async.vercel.app/)
+[Ver la aplicación en vivo en Vercel](https://proyecto-rtc-proyecto-pinterest-asy.vercel.app/)
 
 ---
 
@@ -138,7 +138,7 @@ npm run build
 
 ## 🌐 Demo
 
-[View the live application on Vercel](https://proyecto-rtc-proyecto-pinterest-async.vercel.app/)
+[View the live application on Vercel](https://proyecto-rtc-proyecto-pinterest-asy.vercel.app/)
 
 ---
 
