@@ -52,6 +52,13 @@ button {
   background: none;
 }
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid #0076d7;
+  outline-offset: 3px;
+}
+
 input {
   font-family: inherit;
   border: none;
@@ -111,4 +118,20 @@ main {
 .topic-chip.active {
   background-color: var(--text-main);
   color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 12px 10px;
+  }
+
+  .quick-topics {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .topic-chip {
+    flex-shrink: 0;
+  }
 }

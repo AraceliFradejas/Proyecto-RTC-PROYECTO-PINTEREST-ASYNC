@@ -1,11 +1,14 @@
 import './styles/style.css';
 import { Header } from './components/Header/Header.js';
-import { Gallery, Loader } from './components/Gallery/Gallery.js';
+import { Gallery, Loader, ErrorState } from './components/Gallery/Gallery.js';
 import { Footer } from './components/Footer/Footer.js';
 import { searchPhotos, getInitialPhotos } from './services/unsplash.js';
 
 // Elemento raíz donde montamos toda la aplicación
 const app = document.querySelector('#app');
+let initialPhotos = null;
+let activeRequest = null;
+let lastQuery = '';
 
 // Temas sugeridos para las píldoras de filtrado rápido
 const SUGGESTED_TOPICS = [
@@ -61,18 +64,28 @@ const loadPhotos = async (query = '') => {
   const galleryContainer = document.querySelector('#gallery-container');
   if (!galleryContainer) return;
 
-  // Mostramos el loader mientras se realiza la petición asíncrona
+  activeRequest?.abort();
+  activeRequest = new AbortController();
+  lastQuery = query;
   galleryContainer.innerHTML = Loader();
 
-  let photos = [];
-  if (query && query !== 'Todo') {
-    photos = await searchPhotos(query);
-  } else {
-    photos = await getInitialPhotos();
-  }
+  try {
+    let photos;
+    if (query && query !== 'Todo') {
+      photos = await searchPhotos(query, 30, activeRequest.signal);
+    } else if (initialPhotos) {
+      photos = initialPhotos;
+    } else {
+      photos = await getInitialPhotos(30, activeRequest.signal);
+      initialPhotos = photos;
+    }
 
-  // Renderizamos la galería con los resultados obtenidos
-  galleryContainer.innerHTML = Gallery(photos);
+    galleryContainer.innerHTML = Gallery(photos);
+  } catch (error) {
+    if (error.name !== 'AbortError') {
+      galleryContainer.innerHTML = ErrorState(error.message);
+    }
+  }
 };
 
 /**
@@ -92,7 +105,6 @@ const setupEventListeners = () => {
       const query = searchInput.value.trim();
 
       if (query) {
-        // Limpiamos el input para que no moleste en la siguiente búsqueda (Requisito del proyecto)
         searchInput.value = '';
         searchInput.blur();
 
@@ -105,7 +117,7 @@ const setupEventListeners = () => {
     });
   }
 
-  // 2. Volver al estado inicial al hacer click en el Logo de Pinterest (Requisito del proyecto)
+  // 2. Volver al estado inicial al hacer click en el logo
   if (logoBtn) {
     logoBtn.addEventListener('click', async () => {
       // Marcamos la píldora 'Todo' como activa
@@ -131,6 +143,11 @@ const setupEventListeners = () => {
   // 4. Delegación de eventos para clicks en píldoras y sugerencias de búsquedas
   if (mainElement) {
     mainElement.addEventListener('click', async (e) => {
+      if (e.target.closest('#retry-load')) {
+        await loadPhotos(lastQuery);
+        return;
+      }
+
       // Click en una píldora de tema rápido
       const topicChip = e.target.closest('.topic-chip');
       if (topicChip) {
@@ -147,6 +164,7 @@ const setupEventListeners = () => {
       if (suggestionTag) {
         const query = suggestionTag.dataset.query;
         await loadPhotos(query);
+        return;
       }
     });
   }

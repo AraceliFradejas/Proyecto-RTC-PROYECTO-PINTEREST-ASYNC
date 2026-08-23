@@ -1,6 +1,15 @@
 import './Gallery.css';
 import { Card } from '../Card/Card.js';
 
+const escapeHtml = (value = '') =>
+  String(value).replace(
+    /[&<>'"]/g,
+    (character) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[
+        character
+      ]
+  );
+
 // Componente Gallery para pintar el conjunto de fotos
 export const Gallery = (photos = []) => {
   // Si no hay fotos, mostramos el estado vacío
@@ -40,3 +49,12 @@ export const Loader = () => {
     </div>
   `;
 };
+
+export const ErrorState = (message = 'No se pudieron cargar las imágenes.') => `
+  <section class="empty-state" role="alert">
+    <div class="empty-icon" aria-hidden="true">⚠️</div>
+    <h2 class="empty-title">Algo ha ido mal</h2>
+    <p class="empty-text">${escapeHtml(message)}</p>
+    <button class="topic-chip" id="retry-load" type="button">Reintentar</button>
+  </section>
+`;

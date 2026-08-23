@@ -5,8 +5,8 @@ export const Header = () => {
   return `
     <header class="header">
       <!-- Logo AFM interactivo para volver al inicio -->
-      <div class="header-logo" id="logo-btn" title="Volver al inicio (AFM Inspiration)">
-        <svg class="logo-icon" viewBox="0 0 100 100">
+      <button class="header-logo" id="logo-btn" type="button" aria-label="Volver al inicio">
+        <svg class="logo-icon" viewBox="0 0 100 100" aria-hidden="true">
           <defs>
             <linearGradient id="headerAfmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#e60023"/>
@@ -17,13 +17,11 @@ export const Header = () => {
           <text x="50" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-1.5">AFM</text>
         </svg>
         <span class="logo-title">Inspiration</span>
-      </div>
+      </button>
 
       <!-- Enlaces de navegación -->
       <nav class="header-nav">
-        <button class="nav-link active" id="nav-home">Inicio</button>
-        <button class="nav-link">Explorar</button>
-        <button class="nav-link">Crear</button>
+        <button class="nav-link active" id="nav-home" type="button">Inicio</button>
       </nav>
 
       <!-- Barra de búsqueda -->
@@ -42,17 +40,6 @@ export const Header = () => {
         </form>
       </div>
 
-      <!-- Iconos y avatar -->
-      <div class="header-actions">
-        <button class="action-btn" title="Notificaciones">🔔</button>
-        <button class="action-btn" title="Mensajes">💬</button>
-        <div class="profile-avatar" title="Mi perfil">
-          <img 
-            src="https://images.unsplash.com/placeholder-avatars/extra-large.jpg" 
-            alt="Foto de perfil del usuario" 
-          />
-        </div>
-      </div>
     </header>
   `;
 };

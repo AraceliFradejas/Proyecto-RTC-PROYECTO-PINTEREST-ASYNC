@@ -20,6 +20,7 @@
   border-radius: var(--btn-radius);
   transition: background-color 0.2s ease;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .header-logo:hover {
@@ -68,6 +69,7 @@
 /* Barra de búsqueda */
 .header-search {
   flex: 1;
+  min-width: 0;
 }
 
 .search-form {
@@ -122,44 +124,6 @@
   background-color: var(--primary-hover);
 }
 
-/* Iconos y Perfil de usuario */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.action-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--text-secondary);
-  transition: background-color 0.2s ease;
-}
-
-.action-btn:hover {
-  background-color: var(--gray-light);
-}
-
-.profile-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  border: 1px solid var(--border-color);
-}
-
-.profile-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* ============================================================
    RESPONSIVE HEADER
    ============================================================ */
@@ -174,10 +138,6 @@
   }
 
   .header-nav {
-    display: none;
-  }
-
-  .header-actions .action-btn {
     display: none;
   }
 
