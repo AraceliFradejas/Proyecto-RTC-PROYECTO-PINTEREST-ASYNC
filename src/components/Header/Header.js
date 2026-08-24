@@ -16,18 +16,18 @@ export const Header = () => {
           <rect width="100" height="100" rx="24" fill="url(#headerAfmGrad)"/>
           <text x="50" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-1.5">AFM</text>
         </svg>
-        <span class="logo-title">Inspiration</span>
+        <h1 class="logo-title">Inspiration</h1>
       </button>
 
       <!-- Enlaces de navegación -->
-      <nav class="header-nav">
+      <nav class="header-nav" aria-label="Navegación principal">
         <button class="nav-link active" id="nav-home" type="button">Inicio</button>
       </nav>
 
       <!-- Barra de búsqueda -->
       <div class="header-search">
         <form class="search-form" id="search-form">
-          <button type="submit" class="search-icon-btn" title="Buscar">🔍</button>
+          <button type="submit" class="search-icon-btn" aria-label="Buscar">🔍</button>
           <input 
             type="text" 
             id="search-input" 

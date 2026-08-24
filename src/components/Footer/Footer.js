@@ -57,10 +57,10 @@ export const Footer = () => {
 
       <div class="footer-disclaimer">
         <p class="disclaimer-text">
-          <strong>NOTA MUY IMPORTANTE:</strong> Esta página es un ejercicio realizado por <strong>Araceli Fradejas Muñoz</strong> como entrega para el <strong>PROYECTO: PINTEREST ASYNC</strong>, del <em>"módulo 4: Web Design Advanced"</em> del máster <strong>ROCK THE CODE</strong> de la escuela ThePower / Hackio. Es una réplica interactiva de Pinterest desarrollada con Vite, componentes en Vanilla JavaScript (ES6+) y la API de Unsplash. No es la aplicación oficial de Pinterest.
+          <strong>NOTA MUY IMPORTANTE:</strong> Esta página es un ejercicio realizado por <strong>Araceli Fradejas Muñoz</strong> como entrega para el <strong>PROYECTO: PINTEREST ASYNC</strong>, del <em>"módulo 4: Web Design Advanced"</em> del máster <strong>ROCK THE CODE</strong> de la escuela The Power TECH / Hackio. Es una réplica interactiva de Pinterest desarrollada con Vite, componentes en Vanilla JavaScript (ES6+) y la API de Unsplash. No es la aplicación oficial de Pinterest.
         </p>
         <p class="disclaimer-text disclaimer-en">
-          <strong>VERY IMPORTANT NOTE:</strong> This page is an exercise created by <strong>Araceli Fradejas Muñoz</strong> as a submission for the <strong>PROJECT: PINTEREST ASYNC</strong>, from <em>"Module 4: Web Design Advanced"</em> of the <strong>ROCK THE CODE</strong> master program at ThePower / Hackio school. It is an interactive Pinterest replica developed with Vite, Vanilla JavaScript components (ES6+), and the Unsplash API. It is not the official Pinterest application.
+          <strong>VERY IMPORTANT NOTE:</strong> This page is an exercise created by <strong>Araceli Fradejas Muñoz</strong> as a submission for the <strong>PROJECT: PINTEREST ASYNC</strong>, from <em>"Module 4: Web Design Advanced"</em> of the <strong>ROCK THE CODE</strong> master program at The Power TECH / Hackio school. It is an interactive Pinterest replica developed with Vite, Vanilla JavaScript components (ES6+), and the Unsplash API. It is not the official Pinterest application.
         </p>
       </div>
     </footer>

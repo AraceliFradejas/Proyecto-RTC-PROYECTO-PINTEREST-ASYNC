@@ -2,11 +2,11 @@
 
 ## Versión en castellano
 
-Réplica académica de Pinterest desarrollada dentro del máster de ThePower TECH, en el módulo de Web Design Advanced. El proyecto consiste en una galería visual tipo Pinterest que consume la API de Unsplash para mostrar imágenes, información del autor, avatar, likes y permitir la búsqueda dinámica por palabras clave.
+Réplica académica de Pinterest desarrollada dentro del máster de The Power TECH, en el módulo de Web Design Advanced. El proyecto consiste en una galería visual tipo Pinterest que consume la API de Unsplash para mostrar imágenes, información del autor, avatar, likes y permitir la búsqueda dinámica por palabras clave.
 
 ### Proyecto académico
 
-Este ejercicio forma parte de la entrega del proyecto final del módulo 4: Web Design Advanced, dentro del máster de ThePower TECH. La aplicación está desarrollada con Vite y JavaScript vanilla, con una estructura modular por componentes y un diseño totalmente responsive.
+Este ejercicio forma parte de la entrega del proyecto final del módulo 4: Web Design Advanced, dentro del máster de The Power TECH. La aplicación está desarrollada con Vite y JavaScript vanilla, con una estructura modular por componentes y un diseño totalmente responsive.
 
 ### Demo
 
@@ -105,17 +105,17 @@ Araceli Fradejas Muñoz
 
 ### Nota final
 
-Este proyecto es una entrega académica desarrollada con fines de formación dentro del máster de ThePower TECH y no representa una copia oficial de Pinterest, sino una recreación funcional y visual con fines educativos.
+Este proyecto es una entrega académica desarrollada con fines de formación dentro del máster de The Power TECH y no representa una copia oficial de Pinterest, sino una recreación funcional y visual con fines educativos.
 
 ---
 
 ## English version
 
-Academic Pinterest-style replica developed within the ThePower TECH master program, in the Web Design Advanced module. The project is a visual gallery inspired by Pinterest that consumes the Unsplash API to display images, author information, avatars, likes, and enable dynamic search by keywords.
+Academic Pinterest-style replica developed within the The Power TECH master program, in the Web Design Advanced module. The project is a visual gallery inspired by Pinterest that consumes the Unsplash API to display images, author information, avatars, likes, and enable dynamic search by keywords.
 
 ### Academic project
 
-This exercise is part of the final project submission for Module 4: Web Design Advanced, within the ThePower TECH master program. The application is built with Vite and vanilla JavaScript, using a modular component structure and a fully responsive design.
+This exercise is part of the final project submission for Module 4: Web Design Advanced, within the The Power TECH master program. The application is built with Vite and vanilla JavaScript, using a modular component structure and a fully responsive design.
 
 ### Demo
 
@@ -214,4 +214,4 @@ Araceli Fradejas Muñoz
 
 ### Final note
 
-This project is an academic submission developed for training purposes within the ThePower TECH master program and does not represent an official Pinterest product, but a functional and visual recreation for educational use.
+This project is an academic submission developed for training purposes within the The Power TECH master program and does not represent an official Pinterest product, but a functional and visual recreation for educational use.

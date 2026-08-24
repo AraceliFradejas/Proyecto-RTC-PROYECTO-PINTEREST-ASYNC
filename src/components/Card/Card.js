@@ -40,7 +40,8 @@ export const Card = (photo) => {
           class="photo-img" 
           src="${escapeHtml(imageUrl)}"
           alt="${escapeHtml(altText)}"
-          loading="lazy" 
+          loading="lazy"
+          decoding="async"
         />
         <div class="photo-overlay">
           <a 

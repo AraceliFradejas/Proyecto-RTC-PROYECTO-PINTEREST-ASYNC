@@ -31,7 +31,7 @@ const renderTopicChips = () => {
     <nav class="quick-topics" aria-label="Temas sugeridos">
       ${SUGGESTED_TOPICS.map(
         (topic, index) => `
-          <button class="topic-chip ${index === 0 ? 'active' : ''}" data-topic="${topic}">
+          <button type="button" class="topic-chip ${index === 0 ? 'active' : ''}" data-topic="${topic}" aria-pressed="${index === 0}">
             ${topic}
           </button>
         `
@@ -109,7 +109,10 @@ const setupEventListeners = () => {
         searchInput.blur();
 
         // Desactivamos píldoras seleccionadas previamente
-        document.querySelectorAll('.topic-chip').forEach((chip) => chip.classList.remove('active'));
+        document.querySelectorAll('.topic-chip').forEach((chip) => {
+          chip.classList.remove('active');
+          chip.setAttribute('aria-pressed', 'false');
+        });
 
         // Realizamos la búsqueda
         await loadPhotos(query);
@@ -122,7 +125,9 @@ const setupEventListeners = () => {
     logoBtn.addEventListener('click', async () => {
       // Marcamos la píldora 'Todo' como activa
       document.querySelectorAll('.topic-chip').forEach((chip, i) => {
-        chip.classList.toggle('active', i === 0);
+        const isActive = i === 0;
+        chip.classList.toggle('active', isActive);
+        chip.setAttribute('aria-pressed', String(isActive));
       });
 
       // Recargamos el feed inicial
@@ -134,7 +139,9 @@ const setupEventListeners = () => {
   if (navHomeBtn) {
     navHomeBtn.addEventListener('click', async () => {
       document.querySelectorAll('.topic-chip').forEach((chip, i) => {
-        chip.classList.toggle('active', i === 0);
+        const isActive = i === 0;
+        chip.classList.toggle('active', isActive);
+        chip.setAttribute('aria-pressed', String(isActive));
       });
       await loadPhotos();
     });
@@ -151,8 +158,12 @@ const setupEventListeners = () => {
       // Click en una píldora de tema rápido
       const topicChip = e.target.closest('.topic-chip');
       if (topicChip) {
-        document.querySelectorAll('.topic-chip').forEach((chip) => chip.classList.remove('active'));
+        document.querySelectorAll('.topic-chip').forEach((chip) => {
+          chip.classList.remove('active');
+          chip.setAttribute('aria-pressed', 'false');
+        });
         topicChip.classList.add('active');
+        topicChip.setAttribute('aria-pressed', 'true');
 
         const topic = topicChip.dataset.topic;
         await loadPhotos(topic === 'Todo' ? '' : topic);
