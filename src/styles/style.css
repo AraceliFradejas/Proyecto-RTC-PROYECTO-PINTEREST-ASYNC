@@ -54,7 +54,7 @@ button {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid #0076d7;
+  outline: 3px solid rgba(230, 0, 35, 0.55);
   outline-offset: 3px;
 }
 

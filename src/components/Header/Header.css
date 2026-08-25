@@ -78,6 +78,7 @@
   align-items: center;
   background-color: var(--gray-light);
   border-radius: var(--btn-radius);
+  border: 1px solid transparent;
   padding: 0 16px;
   height: 48px;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
@@ -85,8 +86,8 @@
 
 .search-form:focus-within {
   background-color: #ffffff;
-  box-shadow: 0 0 0 4px rgba(0, 132, 255, 0.2);
-  border: 1px solid #7eb0db;
+  border-color: rgba(230, 0, 35, 0.18);
+  box-shadow: 0 0 0 3px rgba(230, 0, 35, 0.12);
 }
 
 .search-icon-btn {
@@ -101,7 +102,7 @@
 .search-icon-btn:focus-visible {
   outline: none;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #0076d7;
+  box-shadow: 0 0 0 2px rgba(230, 0, 35, 0.22);
 }
 
 .search-input {
