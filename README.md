@@ -8,6 +8,20 @@ Réplica académica de Pinterest desarrollada dentro del máster de The Power TE
 
 Este ejercicio forma parte de la entrega del proyecto final del módulo 4: Web Design Advanced, dentro del máster de The Power TECH. La aplicación está desarrollada con Vite y JavaScript vanilla, con una estructura modular por componentes y un diseño totalmente responsive.
 
+### Mejoras realizadas tras la primera entrega
+
+Tras la corrección de la primera entrega revisé el proyecto siguiendo las indicaciones de mi profesor. Estos son los cambios que hice:
+
+- Ahora creo los elementos desde JavaScript con `createElement()` en vez de usar plantillas HTML e `innerHTML`.
+- Quité la función `escapeHtml` que estaba repetida.
+- Separé el reseteo de los chips para no repetir el mismo bloque de código.
+- Cambié la lupa a `type="button"`, dejando un solo botón `submit` en el formulario.
+- Corregí la estructura del logo para que no hubiera un `h1` dentro de un botón.
+- Ajusté el foco del buscador para que no apareciera el borde azul cuadrado.
+- Dividí las funciones de `main.js` en archivos más pequeños para que el código fuera más fácil de seguir.
+
+Después de los cambios comprobé de nuevo la compilación y mantuve el diseño y el responsive de la primera versión.
+
 ### Demo
 
 [Ver la aplicación desplegada en Vercel](https://proyecto-rtc-proyecto-pinterest-asy.vercel.app/)
@@ -35,11 +49,19 @@ Este ejercicio forma parte de la entrega del proyecto final del módulo 4: Web D
 │   │   ├── Card/
 │   │   ├── Footer/
 │   │   ├── Gallery/
-│   │   └── Header/
+│   │   ├── Header/
+│   │   └── Topics/
+│   ├── app/
+│   │   ├── events.js          # Eventos e interacciones de la interfaz
+│   │   ├── layout.js          # Montaje de la estructura principal
+│   │   └── photoController.js # Carga y estado de las fotografías
 │   ├── services/
 │   │   └── unsplash.js     # Lógica de consulta a la API interna
 │   ├── styles/
 │   │   └── style.css
+│   ├── utils/
+│   │   ├── dom.js             # Creación y montaje seguro de nodos DOM
+│   │   └── topics.js          # Estado compartido de los filtros temáticos
 │   └── main.js
 ├── .env.example
 ├── index.html
@@ -117,6 +139,20 @@ Academic Pinterest-style replica developed within the The Power TECH master prog
 
 This exercise is part of the final project submission for Module 4: Web Design Advanced, within the The Power TECH master program. The application is built with Vite and vanilla JavaScript, using a modular component structure and a fully responsive design.
 
+### Improvements after the first submission
+
+After the first review, I went through the project again following my professor's comments. I made these changes:
+
+- I now create the elements in JavaScript with `createElement()` instead of HTML templates and `innerHTML`.
+- I removed the duplicated `escapeHtml` function.
+- I moved the topic-chip reset into one place to avoid repeating the same code.
+- I changed the search icon to `type="button"`, leaving only one submit button in the form.
+- I corrected the logo structure so there is no `h1` inside a button.
+- I changed the search focus style to remove the square blue outline.
+- I split the functions from `main.js` into smaller files so the code is easier to follow.
+
+After making the changes, I checked the build again and kept the design and responsive behavior from the first version.
+
 ### Demo
 
 [View the deployed application on Vercel](https://proyecto-rtc-proyecto-pinterest-asy.vercel.app/)
@@ -144,11 +180,19 @@ This exercise is part of the final project submission for Module 4: Web Design A
 │   │   ├── Card/
 │   │   ├── Footer/
 │   │   ├── Gallery/
-│   │   └── Header/
+│   │   ├── Header/
+│   │   └── Topics/
+│   ├── app/
+│   │   ├── events.js          # UI events and interactions
+│   │   ├── layout.js          # Main layout rendering
+│   │   └── photoController.js # Photo loading and state
 │   ├── services/
 │   │   └── unsplash.js     # Internal API query logic
 │   ├── styles/
 │   │   └── style.css
+│   ├── utils/
+│   │   ├── dom.js             # Safe DOM node creation and rendering
+│   │   └── topics.js          # Shared topic-filter state
 │   └── main.js
 ├── .env.example
 ├── index.html

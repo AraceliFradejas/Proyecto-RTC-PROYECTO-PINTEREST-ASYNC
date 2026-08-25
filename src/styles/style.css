@@ -53,10 +53,14 @@ button {
 }
 
 button:focus-visible,
-a:focus-visible,
-input:focus-visible {
+a:focus-visible {
   outline: 3px solid #0076d7;
   outline-offset: 3px;
+}
+
+/* El propio contenedor del buscador muestra un foco redondeado. */
+input:focus-visible {
+  outline: none;
 }
 
 input {

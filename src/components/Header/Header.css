@@ -98,6 +98,12 @@
   padding-right: 10px;
 }
 
+.search-icon-btn:focus-visible {
+  outline: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #0076d7;
+}
+
 .search-input {
   flex: 1;
   background: transparent;

@@ -1,60 +1,45 @@
 import './Gallery.css';
 import { Card } from '../Card/Card.js';
+import { createElement } from '../../utils/dom.js';
 
-const escapeHtml = (value = '') =>
-  String(value).replace(
-    /[&<>'"]/g,
-    (character) =>
-      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[
-        character
-      ]
-  );
+const createEmptyState = () => {
+  const suggestions = createElement('div', { className: 'empty-suggestions' });
+  ['Naturaleza', 'Arquitectura', 'Gatos', 'Fondos de pantalla', 'Viajes'].forEach((query) => {
+    suggestions.append(createElement('button', {
+      className: 'suggestion-tag', type: 'button', text: query, dataset: { query }
+    }));
+  });
+  return createElement('section', { className: 'empty-state' }, [
+    createElement('div', { className: 'empty-icon', ariaHidden: 'true', text: '🔍' }),
+    createElement('h2', { className: 'empty-title', text: 'No encontramos fotos para tu búsqueda' }),
+    createElement('p', {
+      className: 'empty-text',
+      text: 'No hubo coincidencias exactas. Prueba con otro término o explora alguna de estas ideas populares:'
+    }),
+    suggestions
+  ]);
+};
 
-// Componente Gallery para pintar el conjunto de fotos
 export const Gallery = (photos = []) => {
-  // Si no hay fotos, mostramos el estado vacío
-  if (!photos || photos.length === 0) {
-    return `
-      <section class="empty-state">
-        <div class="empty-icon" aria-hidden="true">🔍</div>
-        <h2 class="empty-title">No encontramos fotos para tu búsqueda</h2>
-        <p class="empty-text">
-          No hubo coincidencias exactas. Prueba con otro término o explora alguna de estas ideas populares:
-        </p>
-        <div class="empty-suggestions">
-          <button type="button" class="suggestion-tag" data-query="Naturaleza">Naturaleza</button>
-          <button type="button" class="suggestion-tag" data-query="Arquitectura">Arquitectura</button>
-          <button type="button" class="suggestion-tag" data-query="Gatos">Gatos</button>
-          <button type="button" class="suggestion-tag" data-query="Fondos de pantalla">Fondos de pantalla</button>
-          <button type="button" class="suggestion-tag" data-query="Viajes">Viajes</button>
-        </div>
-      </section>
-    `;
-  }
-
-  // Si hay fotos, las renderizamos dentro del layout masonry
-  return `
-    <section class="gallery-grid" id="gallery-grid" aria-label="Galería de fotografías">
-      ${photos.map((photo) => Card(photo)).join('')}
-    </section>
-  `;
+  if (!photos?.length) return createEmptyState();
+  const gallery = createElement('section', {
+    className: 'gallery-grid', id: 'gallery-grid', ariaLabel: 'Galería de fotografías'
+  });
+  photos.forEach((photo) => gallery.append(Card(photo)));
+  return gallery;
 };
 
-// Componente Loader auxiliar para mostrar mientras cargan las fotos
-export const Loader = () => {
-  return `
-    <div class="loader-container" role="status" aria-live="polite">
-      <div class="loader-spinner" aria-hidden="true"></div>
-      <p class="loader-text">Cargando inspiración...</p>
-    </div>
-  `;
-};
+export const Loader = () => createElement('div', {
+  className: 'loader-container', role: 'status', ariaLive: 'polite'
+}, [
+  createElement('div', { className: 'loader-spinner', ariaHidden: 'true' }),
+  createElement('p', { className: 'loader-text', text: 'Cargando inspiración...' })
+]);
 
-export const ErrorState = (message = 'No se pudieron cargar las imágenes.') => `
-  <section class="empty-state" role="alert">
-    <div class="empty-icon" aria-hidden="true">⚠️</div>
-    <h2 class="empty-title">Algo ha ido mal</h2>
-    <p class="empty-text">${escapeHtml(message)}</p>
-    <button class="topic-chip" id="retry-load" type="button">Reintentar</button>
-  </section>
-`;
+export const ErrorState = (message = 'No se pudieron cargar las imágenes.') =>
+  createElement('section', { className: 'empty-state', role: 'alert' }, [
+    createElement('div', { className: 'empty-icon', ariaHidden: 'true', text: '⚠️' }),
+    createElement('h2', { className: 'empty-title', text: 'Algo ha ido mal' }),
+    createElement('p', { className: 'empty-text', text: message }),
+    createElement('button', { className: 'topic-chip', id: 'retry-load', type: 'button', text: 'Reintentar' })
+  ]);
